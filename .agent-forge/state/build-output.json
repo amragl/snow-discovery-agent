@@ -1,1 +1,25 @@
-{}
+{
+  "last_build": "2026-02-13T18:30:00Z",
+  "status": "in-progress",
+  "timestamp": "2026-02-13T18:30:00Z",
+  "agent": "build",
+  "ticket_id": "DISC-001",
+  "ticket": {
+    "id": "DISC-001",
+    "github_issue": 1,
+    "title": "Initialize Python project structure with pyproject.toml and package layout"
+  },
+  "branch": null,
+  "pr_number": null,
+  "pr_url": null,
+  "commits": 0,
+  "files_changed": [],
+  "self_check": {
+    "compiles": null,
+    "meets_criteria": null,
+    "no_mocks": null,
+    "no_placeholders": null
+  },
+  "error": null,
+  "history": []
+}

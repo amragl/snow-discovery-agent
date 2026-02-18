@@ -5,5 +5,29 @@ analyzing results, remediating failures, and managing discovery patterns
 and credentials via the Model Context Protocol (MCP).
 """
 
+from __future__ import annotations
+
 __version__ = "0.1.0"
 __author__ = "amragl"
+
+from .client import ServiceNowClient
+from .exceptions import (
+    ServiceNowAPIError,
+    ServiceNowAuthError,
+    ServiceNowConnectionError,
+    ServiceNowError,
+    ServiceNowNotFoundError,
+    ServiceNowPermissionError,
+    ServiceNowRateLimitError,
+)
+
+__all__ = [
+    "ServiceNowAPIError",
+    "ServiceNowAuthError",
+    "ServiceNowClient",
+    "ServiceNowConnectionError",
+    "ServiceNowError",
+    "ServiceNowNotFoundError",
+    "ServiceNowPermissionError",
+    "ServiceNowRateLimitError",
+]

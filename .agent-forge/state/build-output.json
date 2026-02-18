@@ -1,25 +1,62 @@
 {
-  "last_build": "2026-02-13T18:30:00Z",
-  "status": "in-progress",
-  "timestamp": "2026-02-13T18:30:00Z",
+  "last_build": "2026-02-18T15:15:00Z",
+  "status": "success",
+  "timestamp": "2026-02-18T15:30:00Z",
   "agent": "build",
-  "ticket_id": "DISC-001",
+  "ticket_id": "DISC-003",
   "ticket": {
-    "id": "DISC-001",
-    "github_issue": 1,
-    "title": "Initialize Python project structure with pyproject.toml and package layout"
+    "id": "DISC-003",
+    "github_issue": 5,
+    "title": "Define Pydantic models for all ServiceNow Discovery tables"
   },
-  "branch": null,
-  "pr_number": null,
-  "pr_url": null,
-  "commits": 0,
-  "files_changed": [],
+  "branch": "feature/DISC-003-pydantic-models",
+  "pr_number": 6,
+  "pr_url": "https://github.com/amragl/snow-discovery-agent/pull/6",
+  "commits": 2,
+  "files_changed": [
+    "src/snow_discovery_agent/models.py",
+    "src/snow_discovery_agent/__init__.py",
+    "tests/test_models.py"
+  ],
   "self_check": {
-    "compiles": null,
-    "meets_criteria": null,
-    "no_mocks": null,
-    "no_placeholders": null
+    "compiles": true,
+    "meets_criteria": true,
+    "no_mocks": true,
+    "no_placeholders": true,
+    "ruff_clean": true,
+    "mypy_clean": true,
+    "tests_pass": true,
+    "tests_run": 170,
+    "tests_passed": 170,
+    "coverage_percent": 96.53
   },
+  "models_implemented": [
+    "SnowBaseModel",
+    "DiscoveryStatus",
+    "DiscoverySchedule",
+    "DiscoveryCredential",
+    "DiscoveryRange",
+    "DiscoveryPattern",
+    "DiscoveryLog",
+    "DiscoveryHealthSummary",
+    "DiscoveryCompareResult",
+    "ErrorCount",
+    "CIDelta",
+    "ErrorDelta"
+  ],
   "error": null,
-  "history": []
+  "history": [
+    {
+      "ticket_id": "DISC-001",
+      "pr_number": 2,
+      "status": "success",
+      "completed_at": "2026-02-13T18:35:00Z"
+    },
+    {
+      "ticket_id": "DISC-002",
+      "pr_number": 4,
+      "status": "success",
+      "completed_at": "2026-02-18T02:15:00Z"
+    }
+  ]
 }

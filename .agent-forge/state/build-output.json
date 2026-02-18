@@ -1,22 +1,26 @@
 {
-  "last_build": "2026-02-18T15:15:00Z",
+  "last_build": "2026-02-18T22:15:00Z",
   "status": "success",
-  "timestamp": "2026-02-18T15:30:00Z",
+  "timestamp": "2026-02-18T22:30:00Z",
   "agent": "build",
-  "ticket_id": "DISC-003",
+  "ticket_id": "DISC-006",
   "ticket": {
-    "id": "DISC-003",
-    "github_issue": 5,
-    "title": "Define Pydantic models for all ServiceNow Discovery tables"
+    "id": "DISC-006",
+    "github_issue": 11,
+    "title": "Implement manage_discovery_credentials tool for credential CRUD operations"
   },
-  "branch": "feature/DISC-003-pydantic-models",
-  "pr_number": 6,
-  "pr_url": "https://github.com/amragl/snow-discovery-agent/pull/6",
-  "commits": 2,
+  "branch": "feature/DISC-006-discovery-credentials-tool",
+  "pr_number": 12,
+  "pr_url": "https://github.com/amragl/snow-discovery-agent/pull/12",
+  "commits": 1,
   "files_changed": [
-    "src/snow_discovery_agent/models.py",
+    "src/snow_discovery_agent/tools/__init__.py",
+    "src/snow_discovery_agent/tools/credentials.py",
+    "src/snow_discovery_agent/server.py",
     "src/snow_discovery_agent/__init__.py",
-    "tests/test_models.py"
+    "tests/test_tools_credentials.py",
+    ".agent-forge/plans/backlog.json",
+    ".agent-forge/state/pipeline.json"
   ],
   "self_check": {
     "compiles": true,
@@ -26,24 +30,17 @@
     "ruff_clean": true,
     "mypy_clean": true,
     "tests_pass": true,
-    "tests_run": 170,
-    "tests_passed": 170,
-    "coverage_percent": 96.53
+    "tests_run": 380,
+    "tests_passed": 380,
+    "coverage_percent": 96.0
   },
-  "models_implemented": [
-    "SnowBaseModel",
-    "DiscoveryStatus",
-    "DiscoverySchedule",
-    "DiscoveryCredential",
-    "DiscoveryRange",
-    "DiscoveryPattern",
-    "DiscoveryLog",
-    "DiscoveryHealthSummary",
-    "DiscoveryCompareResult",
-    "ErrorCount",
-    "CIDelta",
-    "ErrorDelta"
-  ],
+  "phase_milestone": {
+    "phase": "phase-1",
+    "name": "Foundation",
+    "status": "completed",
+    "tickets_completed": 6,
+    "tickets_total": 6
+  },
   "error": null,
   "history": [
     {
@@ -57,6 +54,30 @@
       "pr_number": 4,
       "status": "success",
       "completed_at": "2026-02-18T02:15:00Z"
+    },
+    {
+      "ticket_id": "DISC-003",
+      "pr_number": 6,
+      "status": "success",
+      "completed_at": "2026-02-18T15:30:00Z"
+    },
+    {
+      "ticket_id": "DISC-004",
+      "pr_number": 8,
+      "status": "success",
+      "completed_at": "2026-02-18T18:00:00Z"
+    },
+    {
+      "ticket_id": "DISC-005",
+      "pr_number": 10,
+      "status": "success",
+      "completed_at": "2026-02-18T20:30:00Z"
+    },
+    {
+      "ticket_id": "DISC-006",
+      "pr_number": 12,
+      "status": "success",
+      "completed_at": "2026-02-18T22:30:00Z"
     }
   ]
 }

@@ -7,7 +7,7 @@
       "name": "Foundation",
       "description": "Project structure, ServiceNow REST client, FastMCP server skeleton, configuration management, and base models. Establishes the core infrastructure every subsequent phase builds upon.",
       "milestone": "MCP server starts, connects to ServiceNow instance, and responds to a health-check tool call with real instance metadata",
-      "status": "active",
+      "status": "completed",
       "tickets": ["DISC-001", "DISC-002", "DISC-003", "DISC-004", "DISC-005", "DISC-006"]
     },
     {
@@ -127,12 +127,12 @@
       "phase": "phase-1",
       "priority": "high",
       "type": "feature",
-      "status": "in-progress",
+      "status": "done",
       "dependencies": ["DISC-005", "DISC-003"],
       "assigned_agent": "build",
       "estimated_complexity": "medium",
-      "pr_number": null,
-      "completed_at": null
+      "pr_number": 12,
+      "completed_at": "2026-02-18T22:30:00Z"
     },
     {
       "id": "DISC-007",

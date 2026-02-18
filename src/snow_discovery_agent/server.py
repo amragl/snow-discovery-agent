@@ -149,6 +149,72 @@ def handle_tool_error(exc: Exception) -> dict[str, Any]:
 
 
 @mcp.tool()
+def manage_discovery_credentials(
+    action: str,
+    sys_id: str | None = None,
+    name: str | None = None,
+    credential_type: str | None = None,
+    tag: str | None = None,
+    order: int | None = None,
+    active: bool | None = None,
+    filter_type: str | None = None,
+    filter_active: bool | None = None,
+    filter_tag: str | None = None,
+    limit: int = 100,
+) -> dict[str, Any]:
+    """Manage ServiceNow Discovery credentials (CRUD operations).
+
+    Provides five operations against the discovery_credential table:
+
+    - **list**: Query credentials with optional filters (filter_type,
+      filter_active, filter_tag).
+    - **get**: Retrieve a single credential by sys_id.
+    - **create**: Create a new credential. Requires name and credential_type.
+    - **update**: Partially update an existing credential by sys_id.
+    - **delete**: Delete a credential by sys_id.
+
+    Security: Credential secrets (passwords, private keys) are never
+    returned in responses. Only metadata fields are exposed: sys_id,
+    name, type, active, tag, order, affinity.
+
+    Args:
+        action: Operation to perform -- 'list', 'get', 'create', 'update',
+            or 'delete'.
+        sys_id: The sys_id of the credential (required for get, update,
+            delete).
+        name: Credential name (required for create, optional for update).
+        credential_type: Credential type, e.g. 'SSH', 'SNMP', 'Windows',
+            'VMware' (required for create, optional for update).
+        tag: Credential tag for grouping (optional).
+        order: Evaluation order -- lower numbers are tried first (optional).
+        active: Whether the credential is active (optional, defaults to
+            True for create).
+        filter_type: Filter list results by credential type.
+        filter_active: Filter list results by active status.
+        filter_tag: Filter list results by tag.
+        limit: Maximum number of records to return for list (default 100).
+
+    Returns:
+        A dict with success status, data, message, action, and error fields.
+    """
+    from .tools.credentials import manage_discovery_credentials as _impl
+
+    return _impl(
+        action=action,
+        sys_id=sys_id,
+        name=name,
+        credential_type=credential_type,
+        tag=tag,
+        order=order,
+        active=active,
+        filter_type=filter_type,
+        filter_active=filter_active,
+        filter_tag=filter_tag,
+        limit=limit,
+    )
+
+
+@mcp.tool()
 def get_server_info() -> dict[str, Any]:
     """Return server metadata and configuration status.
 

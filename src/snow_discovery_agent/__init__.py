@@ -37,6 +37,7 @@ from .models import (
     parse_snow_datetime,
 )
 from .server import get_client, get_server_config, handle_tool_error, mcp
+from .tools.credentials import manage_discovery_credentials
 
 __all__ = [
     "CIDelta",
@@ -64,6 +65,7 @@ __all__ = [
     "get_config",
     "get_server_config",
     "handle_tool_error",
+    "manage_discovery_credentials",
     "mcp",
     "parse_snow_datetime",
 ]

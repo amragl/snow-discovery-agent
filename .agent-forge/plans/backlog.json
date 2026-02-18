@@ -97,16 +97,16 @@
       "phase": "phase-1",
       "priority": "high",
       "type": "feature",
-      "status": "in-progress",
+      "status": "done",
       "dependencies": ["DISC-001"],
       "assigned_agent": "build",
       "estimated_complexity": "small",
-      "pr_number": null,
-      "completed_at": null
+      "pr_number": 8,
+      "completed_at": "2026-02-18T18:00:00Z"
     },
     {
       "id": "DISC-005",
-      "github_issue": null,
+      "github_issue": 9,
       "title": "Create FastMCP server skeleton with tool registration framework",
       "description": "Create the FastMCP server entry point at src/snow_discovery_agent/server.py that initializes the MCP server and provides the framework for registering discovery tools.\n\nRequirements:\n- FastMCP server instance with name 'snow-discovery-agent' and description\n- Server initialization that loads config and creates ServiceNowClient\n- Tool registration pattern using @mcp.tool() decorators\n- A placeholder health-check tool (get_server_info) that returns server version and status\n- Proper server startup with `mcp.run()` for stdio transport\n- Error handling wrapper for all tool calls that catches ServiceNowError and returns structured error responses\n- Logging setup with configurable log level\n- Entry point in pyproject.toml: `snow-discovery-agent = \"snow_discovery_agent.server:main\"`\n\nAcceptance criteria:\n- Server starts without errors when run via `python -m snow_discovery_agent.server`\n- MCP inspector can connect and list the health-check tool\n- Health-check tool returns server metadata\n- Server gracefully handles missing configuration",
       "phase": "phase-1",

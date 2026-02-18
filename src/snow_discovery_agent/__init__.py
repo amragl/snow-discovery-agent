@@ -36,6 +36,7 @@ from .models import (
     SnowBaseModel,
     parse_snow_datetime,
 )
+from .server import get_client, get_server_config, handle_tool_error, mcp
 
 __all__ = [
     "CIDelta",
@@ -59,6 +60,10 @@ __all__ = [
     "ServiceNowPermissionError",
     "ServiceNowRateLimitError",
     "SnowBaseModel",
+    "get_client",
     "get_config",
+    "get_server_config",
+    "handle_tool_error",
+    "mcp",
     "parse_snow_datetime",
 ]

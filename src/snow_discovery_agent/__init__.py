@@ -37,7 +37,16 @@ from .models import (
     parse_snow_datetime,
 )
 from .server import get_client, get_server_config, handle_tool_error, mcp
+from .tools.analysis import analyze_discovery_results
+from .tools.compare import compare_discovery_runs
 from .tools.credentials import manage_discovery_credentials
+from .tools.health import get_discovery_health
+from .tools.patterns import get_discovery_patterns
+from .tools.ranges import manage_discovery_ranges
+from .tools.remediation import remediate_discovery_failures
+from .tools.schedule import schedule_discovery_scan
+from .tools.schedules_list import list_discovery_schedules
+from .tools.status import get_discovery_status
 
 __all__ = [
     "CIDelta",
@@ -61,11 +70,20 @@ __all__ = [
     "ServiceNowPermissionError",
     "ServiceNowRateLimitError",
     "SnowBaseModel",
+    "analyze_discovery_results",
+    "compare_discovery_runs",
     "get_client",
     "get_config",
+    "get_discovery_health",
+    "get_discovery_patterns",
+    "get_discovery_status",
     "get_server_config",
     "handle_tool_error",
+    "list_discovery_schedules",
     "manage_discovery_credentials",
+    "manage_discovery_ranges",
     "mcp",
     "parse_snow_datetime",
+    "remediate_discovery_failures",
+    "schedule_discovery_scan",
 ]

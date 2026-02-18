@@ -15,7 +15,7 @@
       "name": "Core Discovery Tools",
       "description": "Implement the primary MCP tools for discovery operations: scheduling scans, checking status, managing credentials, and managing IP ranges. These are the bread-and-butter operations every ServiceNow Discovery admin needs.",
       "milestone": "All four core discovery tools (schedule_discovery_scan, get_discovery_status, list_discovery_schedules, manage_discovery_ranges) are functional with real ServiceNow REST API calls",
-      "status": "planned",
+      "status": "completed",
       "tickets": ["DISC-007", "DISC-008", "DISC-009", "DISC-010", "DISC-011"]
     },
     {
@@ -23,7 +23,7 @@
       "name": "Analysis and Remediation",
       "description": "Advanced tools for analyzing discovery scan results, remediating common failures, managing CI classification patterns, computing discovery health metrics, and comparing discovery runs over time.",
       "milestone": "analyze_discovery_results, remediate_discovery_failures, get_discovery_patterns, get_discovery_health, and compare_discovery_runs tools are operational against real ServiceNow data",
-      "status": "planned",
+      "status": "completed",
       "tickets": ["DISC-012", "DISC-013", "DISC-014", "DISC-015", "DISC-016"]
     },
     {
@@ -136,18 +136,18 @@
     },
     {
       "id": "DISC-007",
-      "github_issue": null,
+      "github_issue": 13,
       "title": "Implement schedule_discovery_scan tool to create and trigger discovery scans",
       "description": "Create the schedule_discovery_scan MCP tool at src/snow_discovery_agent/tools/schedule.py for creating and triggering ServiceNow Discovery scans.\n\nServiceNow tables: discovery_schedule, discovery_status\n\nCapabilities:\n- TRIGGER: Start an immediate discovery scan by activating a schedule or creating an on-demand scan. Use the Discovery REST API or table API to trigger. Set the schedule's 'discover' field to 'Active' to trigger.\n- CREATE_SCHEDULE: Create a new discovery schedule with: name, discover type (IP, CI, etc.), IP ranges, MID server selection, run frequency, max run time.\n- LINK_RANGES: Associate IP ranges with a schedule by updating the discovery_schedule's range reference.\n- LINK_CREDENTIALS: Associate credentials with a schedule.\n\nInput parameters:\n- action: 'trigger' | 'create'\n- For trigger: schedule_sys_id (required)\n- For create: name, discover_type, ip_ranges (list), mid_server (optional), max_run_time (optional, default '02:00:00')\n\nAcceptance criteria:\n- Triggering an existing schedule starts a discovery scan (verified by checking discovery_status)\n- Creating a new schedule produces a valid discovery_schedule record\n- Proper error handling for invalid schedule IDs, missing ranges, inactive schedules",
       "phase": "phase-2",
       "priority": "critical",
       "type": "feature",
-      "status": "planned",
+      "status": "done",
       "dependencies": ["DISC-005", "DISC-003"],
       "assigned_agent": "build",
       "estimated_complexity": "large",
-      "pr_number": null,
-      "completed_at": null
+      "pr_number": 14,
+      "completed_at": "2026-02-18T23:59:00Z"
     },
     {
       "id": "DISC-008",
@@ -157,12 +157,12 @@
       "phase": "phase-2",
       "priority": "critical",
       "type": "feature",
-      "status": "planned",
+      "status": "done",
       "dependencies": ["DISC-005", "DISC-003"],
       "assigned_agent": "build",
       "estimated_complexity": "medium",
-      "pr_number": null,
-      "completed_at": null
+      "pr_number": 14,
+      "completed_at": "2026-02-18T23:59:00Z"
     },
     {
       "id": "DISC-009",
@@ -172,12 +172,12 @@
       "phase": "phase-2",
       "priority": "high",
       "type": "feature",
-      "status": "planned",
+      "status": "done",
       "dependencies": ["DISC-005", "DISC-003"],
       "assigned_agent": "build",
       "estimated_complexity": "medium",
-      "pr_number": null,
-      "completed_at": null
+      "pr_number": 14,
+      "completed_at": "2026-02-18T23:59:00Z"
     },
     {
       "id": "DISC-010",
@@ -187,12 +187,12 @@
       "phase": "phase-2",
       "priority": "high",
       "type": "feature",
-      "status": "planned",
+      "status": "done",
       "dependencies": ["DISC-005", "DISC-003"],
       "assigned_agent": "build",
       "estimated_complexity": "medium",
-      "pr_number": null,
-      "completed_at": null
+      "pr_number": 14,
+      "completed_at": "2026-02-18T23:59:00Z"
     },
     {
       "id": "DISC-011",
@@ -202,12 +202,12 @@
       "phase": "phase-2",
       "priority": "high",
       "type": "feature",
-      "status": "planned",
+      "status": "done",
       "dependencies": ["DISC-005"],
       "assigned_agent": "build",
       "estimated_complexity": "medium",
-      "pr_number": null,
-      "completed_at": null
+      "pr_number": 14,
+      "completed_at": "2026-02-18T23:59:00Z"
     },
     {
       "id": "DISC-012",
@@ -217,12 +217,12 @@
       "phase": "phase-3",
       "priority": "critical",
       "type": "feature",
-      "status": "planned",
+      "status": "done",
       "dependencies": ["DISC-008", "DISC-011"],
       "assigned_agent": "build",
       "estimated_complexity": "large",
-      "pr_number": null,
-      "completed_at": null
+      "pr_number": 14,
+      "completed_at": "2026-02-18T23:59:00Z"
     },
     {
       "id": "DISC-013",
@@ -232,12 +232,12 @@
       "phase": "phase-3",
       "priority": "high",
       "type": "feature",
-      "status": "planned",
+      "status": "done",
       "dependencies": ["DISC-012", "DISC-006"],
       "assigned_agent": "build",
       "estimated_complexity": "xl",
-      "pr_number": null,
-      "completed_at": null
+      "pr_number": 14,
+      "completed_at": "2026-02-18T23:59:00Z"
     },
     {
       "id": "DISC-014",
@@ -247,12 +247,12 @@
       "phase": "phase-3",
       "priority": "medium",
       "type": "feature",
-      "status": "planned",
+      "status": "done",
       "dependencies": ["DISC-005", "DISC-003", "DISC-011"],
       "assigned_agent": "build",
       "estimated_complexity": "medium",
-      "pr_number": null,
-      "completed_at": null
+      "pr_number": 14,
+      "completed_at": "2026-02-18T23:59:00Z"
     },
     {
       "id": "DISC-015",
@@ -262,12 +262,12 @@
       "phase": "phase-3",
       "priority": "high",
       "type": "feature",
-      "status": "planned",
+      "status": "done",
       "dependencies": ["DISC-008", "DISC-009", "DISC-006", "DISC-010"],
       "assigned_agent": "build",
       "estimated_complexity": "large",
-      "pr_number": null,
-      "completed_at": null
+      "pr_number": 14,
+      "completed_at": "2026-02-18T23:59:00Z"
     },
     {
       "id": "DISC-016",
@@ -277,12 +277,12 @@
       "phase": "phase-3",
       "priority": "medium",
       "type": "feature",
-      "status": "planned",
+      "status": "done",
       "dependencies": ["DISC-008", "DISC-011"],
       "assigned_agent": "build",
       "estimated_complexity": "large",
-      "pr_number": null,
-      "completed_at": null
+      "pr_number": 14,
+      "completed_at": "2026-02-18T23:59:00Z"
     },
     {
       "id": "DISC-017",

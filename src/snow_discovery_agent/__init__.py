@@ -20,8 +20,34 @@ from .exceptions import (
     ServiceNowPermissionError,
     ServiceNowRateLimitError,
 )
+from .models import (
+    CIDelta,
+    DiscoveryCompareResult,
+    DiscoveryCredential,
+    DiscoveryHealthSummary,
+    DiscoveryLog,
+    DiscoveryPattern,
+    DiscoveryRange,
+    DiscoverySchedule,
+    DiscoveryStatus,
+    ErrorCount,
+    ErrorDelta,
+    SnowBaseModel,
+    parse_snow_datetime,
+)
 
 __all__ = [
+    "CIDelta",
+    "DiscoveryCompareResult",
+    "DiscoveryCredential",
+    "DiscoveryHealthSummary",
+    "DiscoveryLog",
+    "DiscoveryPattern",
+    "DiscoveryRange",
+    "DiscoverySchedule",
+    "DiscoveryStatus",
+    "ErrorCount",
+    "ErrorDelta",
     "ServiceNowAPIError",
     "ServiceNowAuthError",
     "ServiceNowClient",
@@ -30,4 +56,6 @@ __all__ = [
     "ServiceNowNotFoundError",
     "ServiceNowPermissionError",
     "ServiceNowRateLimitError",
+    "SnowBaseModel",
+    "parse_snow_datetime",
 ]

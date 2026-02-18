@@ -1,0 +1,37 @@
+version: "3.9"
+
+# ---------------------------------------------------------------------------
+# snow-discovery-agent — local development and deployment
+# ---------------------------------------------------------------------------
+
+services:
+  snow-discovery-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: snow-discovery-agent:latest
+    container_name: snow-discovery-agent
+
+    # Load credentials from .env file (copy .env.example → .env)
+    env_file:
+      - .env
+
+    # Override specific env vars here for local dev
+    environment:
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      SERVICENOW_TIMEOUT: ${SERVICENOW_TIMEOUT:-30}
+      SERVICENOW_MAX_RETRIES: ${SERVICENOW_MAX_RETRIES:-3}
+
+    # Keep stdin open for MCP stdio transport
+    stdin_open: true
+    tty: false
+
+    # Health check — verify the Python module is importable
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import snow_discovery_agent"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+    restart: unless-stopped

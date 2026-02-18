@@ -11,6 +11,7 @@ __version__ = "0.1.0"
 __author__ = "amragl"
 
 from .client import ServiceNowClient
+from .config import DiscoveryAgentConfig, get_config
 from .exceptions import (
     ServiceNowAPIError,
     ServiceNowAuthError,
@@ -38,6 +39,7 @@ from .models import (
 
 __all__ = [
     "CIDelta",
+    "DiscoveryAgentConfig",
     "DiscoveryCompareResult",
     "DiscoveryCredential",
     "DiscoveryHealthSummary",
@@ -57,5 +59,6 @@ __all__ = [
     "ServiceNowPermissionError",
     "ServiceNowRateLimitError",
     "SnowBaseModel",
+    "get_config",
     "parse_snow_datetime",
 ]

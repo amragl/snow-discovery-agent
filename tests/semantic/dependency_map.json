@@ -1,0 +1,59 @@
+{
+  "agent": "snow-discovery-agent",
+  "tool_to_prompts": {
+    "analyze_discovery_results": ["SS-002", "SS-003"],
+    "schedule_discovery_scan": ["SS-004"],
+    "get_discovery_health": ["SS-005"],
+    "manage_discovery_credentials": ["SS-006"],
+    "remediate_discovery_failures": ["SS-008"],
+    "compare_discovery_runs": ["SS-009"],
+    "get_discovery_patterns": ["SS-010"],
+    "manage_discovery_ranges": ["SS-014"],
+    "get_discovery_status": ["SS-015"],
+    "list_discovery_schedules": ["SM-012"]
+  },
+  "file_to_tools": {
+    "src/snow_discovery_agent/tools/analysis.py": [
+      "analyze_discovery_results"
+    ],
+    "src/snow_discovery_agent/tools/compare.py": [
+      "compare_discovery_runs"
+    ],
+    "src/snow_discovery_agent/tools/credentials.py": [
+      "manage_discovery_credentials"
+    ],
+    "src/snow_discovery_agent/tools/health.py": [
+      "get_discovery_health"
+    ],
+    "src/snow_discovery_agent/tools/patterns.py": [
+      "get_discovery_patterns"
+    ],
+    "src/snow_discovery_agent/tools/ranges.py": [
+      "manage_discovery_ranges"
+    ],
+    "src/snow_discovery_agent/tools/remediation.py": [
+      "remediate_discovery_failures"
+    ],
+    "src/snow_discovery_agent/tools/schedule.py": [
+      "schedule_discovery_scan"
+    ],
+    "src/snow_discovery_agent/tools/schedules_list.py": [
+      "list_discovery_schedules"
+    ],
+    "src/snow_discovery_agent/tools/status.py": [
+      "get_discovery_status"
+    ],
+    "src/snow_discovery_agent/client.py": [
+      "analyze_discovery_results",
+      "schedule_discovery_scan",
+      "get_discovery_health",
+      "manage_discovery_credentials",
+      "remediate_discovery_failures",
+      "compare_discovery_runs",
+      "get_discovery_patterns",
+      "manage_discovery_ranges",
+      "get_discovery_status",
+      "list_discovery_schedules"
+    ]
+  }
+}

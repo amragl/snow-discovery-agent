@@ -1,0 +1,82 @@
+department: "server_support"
+persona: "Server Support Engineer"
+prompts:
+  - id: "SS-002"
+    text: "List all servers discovered in the last discovery scan"
+    target_agent: "snow-discovery-agent"
+    mcp_tools: ["analyze_discovery_results"]
+    expected_domain: "discovery"
+    tags: ["discovery", "server", "scan"]
+    requires_live_sn: true
+
+  - id: "SS-003"
+    text: "Which servers have not been discovered in more than 90 days?"
+    target_agent: "snow-discovery-agent"
+    mcp_tools: ["analyze_discovery_results"]
+    expected_domain: "discovery"
+    tags: ["discovery", "server", "stale"]
+    requires_live_sn: true
+
+  - id: "SS-004"
+    text: "Schedule a discovery scan for the 10.0.0.0/24 IP range"
+    target_agent: "snow-discovery-agent"
+    mcp_tools: ["schedule_discovery_scan"]
+    expected_domain: "discovery"
+    tags: ["discovery", "schedule", "ip-range"]
+    requires_live_sn: true
+
+  - id: "SS-005"
+    text: "Show me the discovery health status"
+    target_agent: "snow-discovery-agent"
+    mcp_tools: ["get_discovery_health"]
+    expected_domain: "discovery"
+    tags: ["discovery", "health", "status"]
+    requires_live_sn: true
+
+  - id: "SS-006"
+    text: "What are the current discovery credentials configured?"
+    target_agent: "snow-discovery-agent"
+    mcp_tools: ["manage_discovery_credentials"]
+    expected_domain: "discovery"
+    tags: ["discovery", "credentials"]
+    requires_live_sn: true
+
+  - id: "SS-008"
+    text: "Remediate discovery failures for Windows servers"
+    target_agent: "snow-discovery-agent"
+    mcp_tools: ["remediate_discovery_failures"]
+    expected_domain: "discovery"
+    tags: ["discovery", "remediation", "windows", "server"]
+    requires_live_sn: true
+
+  - id: "SS-009"
+    text: "Compare the last two discovery runs for the production subnet"
+    target_agent: "snow-discovery-agent"
+    mcp_tools: ["compare_discovery_runs"]
+    expected_domain: "discovery"
+    tags: ["discovery", "compare", "production"]
+    requires_live_sn: true
+
+  - id: "SS-010"
+    text: "Show me discovery patterns configured for the network"
+    target_agent: "snow-discovery-agent"
+    mcp_tools: ["get_discovery_patterns"]
+    expected_domain: "discovery"
+    tags: ["discovery", "patterns", "network"]
+    requires_live_sn: true
+
+  - id: "SS-014"
+    text: "Show me all managed IP ranges for discovery"
+    target_agent: "snow-discovery-agent"
+    mcp_tools: ["manage_discovery_ranges"]
+    expected_domain: "discovery"
+    tags: ["discovery", "ip-range", "managed"]
+    requires_live_sn: true
+
+  - id: "SS-015"
+    text: "What is the current discovery scan status for the production range?"
+    target_agent: "snow-discovery-agent"
+    mcp_tools: ["get_discovery_status"]
+    expected_domain: "discovery"
+    tags: ["discovery", "status", "production"]
+    requires_live_sn: true

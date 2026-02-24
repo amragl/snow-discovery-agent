@@ -1,0 +1,10 @@
+department: "service_management"
+persona: "Service Manager"
+prompts:
+  - id: "SM-012"
+    text: "Show me all active discovery schedules"
+    target_agent: "snow-discovery-agent"
+    mcp_tools: ["list_discovery_schedules"]
+    expected_domain: "discovery"
+    tags: ["discovery", "schedule", "active"]
+    requires_live_sn: true
